@@ -3,15 +3,15 @@ import { Fragment, useState, useEffect } from "react";
 function NavBar() {
   const [isCollapsed, setIsCollapsed] = useState(true);
 
-  const [isFixed, setIsFixed] = useState(false);
+  const [isFixed, setIsFixed] = useState(true);
   const [isHidden, setIsHidden] = useState(false);
   const [timeoutId, setTimeoutId] = useState(null);
 
   useEffect(() => {
     function scrollHandler() {
       setIsHidden(true);
-      // setIsFixed(window.scrollY < 1000);
-      console.log(window.scrollY);
+
+      setIsFixed(window.scrollY >= 0);
 
       if (timeoutId) {
         clearTimeout(timeoutId);
@@ -36,7 +36,7 @@ function NavBar() {
     <Fragment>
       <div
         className={`${
-          isFixed ? "fixed py-3 top-0 inset-x-0 z-50 bg-white shadow-md" : ""
+          isFixed ? "fixed py-2 top-0 inset-x-0 z-50 bg-white shadow-md" : ""
         } ${
           isHidden ? "-translate-y-full" : "translate-y-0"
         } transition-all duration-300 ease-in-out`}

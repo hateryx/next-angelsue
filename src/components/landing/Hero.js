@@ -7,7 +7,7 @@ function Hero() {
             <div className="md:w-1/2 mb-8 md:mb-0 px-5">
               <h1 className="text-4xl font-semibold mb-4 tracking-tight">
                 Be your own kind of{" "}
-                <span className="mt-6 text-5xl font-bold tracking-widest">
+                <span className="mt-6 text-5xl font-semibold tracking-wider">
                   BEAUTIFUL
                 </span>
               </h1>
