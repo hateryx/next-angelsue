@@ -36,7 +36,7 @@ function NavBar() {
     <Fragment>
       <div
         className={`${
-          isFixed ? "fixed py-2 top-0 inset-x-0 z-50 bg-white shadow-md" : ""
+          isFixed ? "fixed py-2 top-0 inset-x-0 z-40 bg-white shadow-md" : ""
         } ${
           isHidden ? "-translate-y-full" : "translate-y-0"
         } transition-all duration-300 ease-in-out`}
