@@ -2,6 +2,7 @@ import { Fragment, useState, useEffect } from "react";
 
 function NavBar() {
   const [isCollapsed, setIsCollapsed] = useState(true);
+  const [prevScrollPos, setPrevScrollPos] = useState(0);
 
   const [isFixed, setIsFixed] = useState(true);
   const [isHidden, setIsHidden] = useState(false);
@@ -9,28 +10,37 @@ function NavBar() {
 
   useEffect(() => {
     function scrollHandler() {
-      setIsHidden(true);
+      const currentScrollPos = window.pageYOffset;
+      const isScrollingUp = currentScrollPos < prevScrollPos;
 
-      setIsFixed(window.scrollY >= 0);
+      setIsFixed(currentScrollPos >= 0);
 
-      if (timeoutId) {
-        clearTimeout(timeoutId);
+      if (isScrollingUp) {
+        setIsHidden(false);
+      } else {
+        setIsHidden(true);
       }
 
-      setTimeoutId(
-        setTimeout(() => {
-          setIsHidden(false);
-        }, 1000)
-      );
+      setPrevScrollPos(currentScrollPos);
+
+      // if (timeoutId) {
+      //   clearTimeout(timeoutId);
+      // }
+
+      // // setTimeoutId(
+      // //   setTimeout(() => {
+      // //     setIsHidden(false);
+      // //   }, 1000)
+      // // );
     }
 
     window.addEventListener("scroll", scrollHandler);
 
     return () => {
       window.removeEventListener("scroll", scrollHandler);
-      clearTimeout(timeoutId);
+      // clearTimeout(timeoutId);
     };
-  }, [timeoutId]);
+  }, [prevScrollPos]);
 
   return (
     <Fragment>

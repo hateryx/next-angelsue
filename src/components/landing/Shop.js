@@ -1,7 +1,6 @@
 import ShopCard from "./children/ShopCard";
 import Product from "../products/Product";
 import { useState } from "react";
-import { setLazyProp } from "next/dist/server/api-utils";
 
 function Shop() {
   const products = [
