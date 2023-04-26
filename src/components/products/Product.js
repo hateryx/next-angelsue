@@ -1,11 +1,18 @@
-import { Fragment, useEffect } from "react";
+import { Fragment, useState, useEffect } from "react";
 
 function Product(props) {
-  const { clickHandler, product, image, summary } = props;
+  const { product, image, summary, color } = props;
+
+  const [isCardVisible, setCardIsVisible] = useState();
+  const clickHandler = () => {
+    props.onClick();
+    setCardIsVisible(false);
+  };
 
   useEffect(() => {
     // Scroll to top of page when component is mounted
     setTimeout(() => {
+      setCardIsVisible(true);
       document.getElementById("product").scrollIntoView({
         behavior: "smooth",
         block: "start",
@@ -15,10 +22,20 @@ function Product(props) {
   }, []);
 
   return (
-    <div className="container">
+    <div
+      className={`${
+        isCardVisible
+          ? "opacity-100 translate-y-0"
+          : "opacity-0 -translate-y-1/2"
+      } bg-[${color}] transition-all duration-500 ease-in-out fixed top-0 left-0 w-full h-full flex justify-center items-center bg-opacity-50 z-50`}
+      onClick={clickHandler}
+    >
       <div
-        className="absolute z-50 inset-x-0 inset-y-20 justify-center items-center"
-        onClick={clickHandler}
+        className={`${
+          isCardVisible
+            ? "opacity-100 translate-y-0"
+            : "opacity-0 -translate-y-1/2"
+        } transition-all duration-500 ease-in-out absolute z-50 inset-x-0 inset-y-20 justify-center items-center`}
       >
         <div
           id="product"
