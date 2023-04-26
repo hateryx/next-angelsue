@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 function ShopCard(props) {
   const { product, image, clickHandler, id } = props;
 
