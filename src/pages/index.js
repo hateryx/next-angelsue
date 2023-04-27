@@ -1,4 +1,4 @@
-import { NavBar, Hero, Shop } from "@/components/landing";
+import { NavBar, Hero, Shop, Footer } from "@/components/landing";
 
 function HomePage(props) {
   return (
@@ -6,6 +6,7 @@ function HomePage(props) {
       <NavBar />
       <Hero />
       <Shop />
+      <Footer />
     </div>
   );
 }

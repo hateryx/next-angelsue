@@ -1,4 +1,20 @@
+import { useEffect, useState } from "react";
+
 function Hero() {
+  const [scrollPosition, setScrollPosition] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollPosition(window.pageYOffset);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  const bgPosition = `50% ${scrollPosition * 0.5}px`;
+
   return (
     <div className="min-h-screen container mx-auto bg-white">
       <section className="flex py-20 bg-fuchsia-50">
@@ -27,11 +43,15 @@ function Hero() {
               </a>
             </div>
             <div className="md:w-1/2">
-              <img
-                src="assets/hero-m1.jpg"
-                alt="hero-m1"
-                className="w-full h-auto"
-              />
+              <div
+                className="bg-cover bg-no-repeat h-screen"
+                style={{
+                  backgroundImage: `url("assets/hero-m1.jpg")`,
+                  backgroundPosition: bgPosition,
+                  maxHeight: "100vh",
+                  minHeight: "40vh",
+                }}
+              ></div>
             </div>
           </div>
         </div>
