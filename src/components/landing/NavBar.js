@@ -9,7 +9,7 @@ function NavBar() {
 
   function clickHandler() {
     if (isMenuOpen === undefined) {
-      setIsMenuOpen(false);
+      setIsMenuOpen(true);
     } else {
       setIsMenuOpen(!isMenuOpen);
     }
@@ -39,7 +39,7 @@ function NavBar() {
   }, [prevScrollPos]);
 
   return (
-    <Fragment>
+    <div>
       <div
         className={`${
           isFixed ? "fixed top-0 inset-x-0 z-40 bg-white shadow-md" : ""
@@ -49,7 +49,7 @@ function NavBar() {
       >
         <nav className="flex justify-between flex-wrap py-3">
           <div className="flex space-x-20">
-            <button>
+            <button onClick={clickHandler}>
               <img
                 src="assets/navbar.jpg"
                 alt="icon"
@@ -66,26 +66,44 @@ function NavBar() {
             <img
               src="assets/nav-ital.png"
               alt="icon"
-              className="justify-end mr-5 object-cover h-10 md:h-12"
+              className="justify-end mx-5 object-cover h-10 md:h-12"
             ></img>
           </div>
         </nav>
-        <div className="min-h-screen bg-red-50 flex flex-col space-y-12 py-16 items-start pl-10">
-          <button className="tracking-widest text-2xl font-semibold text-red-400">
-            Shop
-          </button>
-          <button className="tracking-widest text-2xl font-semibold text-red-400">
-            Products
-          </button>
-          <button className="tracking-widest text-2xl font-semibold text-red-400">
-            About
-          </button>
-          <button className="tracking-widest text-2xl font-semibold text-red-400">
-            Contact Us
-          </button>
+        <div
+          className={`${
+            isMenuOpen ? "translate-x-0" : "-translate-x-full"
+          } z-2 transition-all duration-500 ease-in-out`}
+        >
+          <ul
+            className={`${
+              isMenuOpen ? "py-16 h-screen" : "h-0"
+            } transition-all duration-500 ease-in-out flex flex-col space-y-12 items-start pl-10`}
+          >
+            <li>
+              <a className="tracking-widest text-2xl font-semibold text-fuchsia-500">
+                Shop
+              </a>
+            </li>
+            <li>
+              <a className="tracking-widest text-2xl font-semibold text-fuchsia-500">
+                Products
+              </a>
+            </li>
+            <li>
+              <a className="tracking-widest text-2xl font-semibold text-fuchsia-500">
+                About
+              </a>
+            </li>
+            <li>
+              <a className="tracking-widest text-2xl font-semibold text-fuchsia-500">
+                Contact Us
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
-    </Fragment>
+    </div>
   );
 }
 

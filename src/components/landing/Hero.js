@@ -17,17 +17,17 @@ function Hero() {
 
   return (
     <div className="min-h-screen container mx-auto bg-white">
-      <section className="flex py-20 bg-fuchsia-50">
+      <section className="mt-10 py-20 bg-fuchsia-50">
         <div className="max-w-4xl justify-between mx-auto px-6">
-          <div className="flex flex-col md:flex-row items-center">
-            <div className="md:w-1/2 mb-8 md:mb-0 px-5">
-              <h1 className="text-4xl font-semibold mb-4 tracking-tight">
+          <div className="flex flex-col-reverse md:flex-row items-center">
+            <div className="md:w-full mb-8 md:mb-0 md:px-10">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold mb-4 tracking-tight">
                 Be your own kind of{" "}
-                <span className="mt-6 text-5xl font-semibold tracking-wider">
+                <span className="mt-6 block text-4xl md:text-5xl font-semibold tracking-wider">
                   BEAUTIFUL
                 </span>
               </h1>
-              <p className="text-gray-600 font-light leading-loose text-lg mb-8">
+              <p className="text-gray-600 font-light leading-loose text-lg md:text-xl lg:text-2xl mb-8">
                 Embrace your unique beauty with{" "}
                 <span className="font-semibold">Angel Sue</span> skincare. Our
                 products are designed to enhance your natural radiance and boost
@@ -42,9 +42,9 @@ function Hero() {
                 Get Started
               </a>
             </div>
-            <div className="md:w-1/2">
+            <div className="w-full mx-auto md:w-1/2">
               <div
-                className="bg-cover bg-no-repeat h-screen"
+                className="bg-cover bg-no-repeat md:h-screen"
                 style={{
                   backgroundImage: `url("assets/hero-m1.jpg")`,
                   backgroundPosition: bgPosition,
