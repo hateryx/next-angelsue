@@ -21,7 +21,7 @@ function Shop() {
     {
       product: "Pimple Cream",
       image: "assets/products/pimplecream.jpg",
-      color: "#d7cab9",
+      color: "#dedfd9",
       summary:
         "Say goodbye to pesky pimples with our powerful pimple cream. Our dermatologist-tested formula is specially designed to target blemishes and breakouts, leaving your skin clear, smooth, and radiant. Infused with a potent blend of natural and scientific ingredients, our cream works to unclog pores, reduce inflammation, and prevent future breakouts. The lightweight and non-greasy formula absorbs quickly into the skin, providing instant relief and long-lasting results. Suitable for all skin types, our pimple cream is gentle enough for daily use, and won't dry out or irritate your skin. Get ready to say hello to clear, beautiful skin and boost your confidence with our pimple cream. Try it today and see the difference for yourself!",
     },
@@ -39,54 +39,48 @@ function Shop() {
   const clickHandler = (event) => {
     setSelectProduct(products[event.currentTarget.id]);
     setShowProduct(!showProduct);
-    !showProduct
-      ? (document.body.style.overflow = "hidden")
-      : (document.body.style.overflow = "scroll");
+    // !showProduct
+    //   ? (document.body.style.overflow = "hidden")
+    //   : (document.body.style.overflow = "scroll");
   };
 
   function productLandClick() {
     setTimeout(() => {
       setShowProduct(!showProduct);
-      !showProduct
-        ? (document.body.style.overflow = "hidden")
-        : (document.body.style.overflow = "scroll");
+      // !showProduct
+      //   ? (document.body.style.overflow = "hidden")
+      //   : (document.body.style.overflow = "scroll");
     }, 200);
   }
 
   return (
     <div className="relative z-8" id="shop">
-      {showProduct && (
-        <Product
-          clickHandler={clickHandler}
-          color={selectProduct.color}
-          product={selectProduct.product}
-          image={selectProduct.image}
-          summary={selectProduct.summary}
-          onClick={productLandClick}
-
-          // which_project={pickProject}
-        />
-      )}
       <section className="py-7 sm:py-7 md:py-16 min-h-screen">
-        <div className="container mx-auto">
-          <div className="flex flex-start">
-            <div className="">
-              <p className="font-semibold text-center py-5 sm:py-5 md:py-7 text-xl sm:text-xl md:text-2xl">
-                Our Products
-              </p>
-            </div>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 gap-6 mx-auto content-around items-center">
-            {products.map(({ product, image }, index) => (
-              <ShopCard
-                key={index}
-                id={index}
-                product={product}
-                image={image}
-                clickHandler={clickHandler}
-              />
-            ))}
-          </div>
+        <div className="flex flex-start justify-center">
+          <p className="font-semibold text-pink-600 text-center tracking-tight py-5 sm:py-5 md:py-7 text-3xl md:text-4xl">
+            Our Products
+          </p>
+        </div>
+        {showProduct && (
+          <Product
+            clickHandler={clickHandler}
+            color={selectProduct.color}
+            product={selectProduct.product}
+            image={selectProduct.image}
+            summary={selectProduct.summary}
+            onClick={productLandClick}
+          />
+        )}
+        <div className="my-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 gap-6 mx-auto content-around items-center">
+          {products.map(({ product, image }, index) => (
+            <ShopCard
+              key={index}
+              id={index}
+              product={product}
+              image={image}
+              clickHandler={clickHandler}
+            />
+          ))}
         </div>
       </section>
     </div>

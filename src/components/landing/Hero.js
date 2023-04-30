@@ -26,7 +26,7 @@ function Hero() {
                   Experience the difference
                 </span>
               </h1>
-              <p className="text-gray-600 font-light leading-9 text-lg md:text-xl lg:text-2xl mb-8">
+              <p className="text-gray-600 font-light leading-relaxed text-lg md:text-xl lg:text-2xl mb-8">
                 Embrace your unique beauty with{" "}
                 <span className="font-semibold tracking-wide text-2xl text-pink-600">
                   Angel Sue
@@ -52,13 +52,20 @@ function Hero() {
                   backgroundPosition: bgPosition,
                   maxHeight: "100vh",
                   minHeight: "30vh",
+                  animation: "fadeIn 2s ease-in",
                 }}
               >
                 <div className="h-full flex flex-col justify-between py-6 lg:py-16 mb-4 tracking-tight">
-                  <h1 className="z-5 px-1 sm:px-3 py-5 text-5xl md:text-5xl font-semibold text-pink-800 leading-normal flex flex-col">
+                  <h1
+                    style={{ animation: "fadeIn 1s ease-out" }}
+                    className="z-5 px-1 sm:px-3 py-5 text-5xl md:text-5xl font-semibold text-pink-800 leading-normal flex flex-col"
+                  >
                     Be your own <span className="py-3 lg:py-4">kind of</span>
                   </h1>
-                  <h1 className="z-5 border-y-2 transition-all duration-500 ease-in-out hover:scale-110 border-pink-700 py-4 bg-pink-50 bg-opacity-20 text-center px-0 sm:px-3 block text-5xl lg:text-6xl font-bold text-pink-600 tracking-widest">
+                  <h1
+                    style={{ animation: "fadeIn 1s ease-out" }}
+                    className="z-5 border-y-2 transition-all duration-500 ease-in-out hover:scale-110 border-pink-700 py-4 bg-pink-200 bg-opacity-0 text-center px-0 sm:px-3 block text-5xl lg:text-6xl font-bold text-pink-600 tracking-widest"
+                  >
                     BEAUTIFUL
                   </h1>
                 </div>
