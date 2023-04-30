@@ -42,7 +42,7 @@ function NavBar() {
     <div>
       <div
         className={`${
-          isFixed ? "fixed top-0 inset-x-0 z-40 bg-white shadow-md" : ""
+          isFixed ? "fixed top-0 inset-x-0 z-20 bg-white shadow-md" : ""
         } ${
           isHidden ? "-translate-y-full" : "translate-y-0"
         } transition-all duration-300 ease-in-out`}

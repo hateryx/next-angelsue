@@ -57,7 +57,10 @@ function Shop() {
     <div className="relative z-8" id="shop">
       <section className="py-7 sm:py-7 md:py-16 min-h-screen">
         <div className="flex flex-start justify-center">
-          <p className="font-semibold text-pink-600 text-center tracking-tight py-5 sm:py-5 md:py-7 text-3xl md:text-4xl">
+          <p
+            id="product"
+            className="font-semibold text-pink-600 text-center tracking-tight py-8 sm:py-5 md:py-7 text-3xl md:text-4xl"
+          >
             Our Products
           </p>
         </div>
@@ -71,7 +74,7 @@ function Shop() {
             onClick={productLandClick}
           />
         )}
-        <div className="my-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 gap-6 mx-auto content-around items-center">
+        <div className="my-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 gap-6 mx-auto container content-around items-center">
           {products.map(({ product, image }, index) => (
             <ShopCard
               key={index}

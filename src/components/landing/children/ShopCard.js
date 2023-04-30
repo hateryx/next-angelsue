@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 function ShopCard(props) {
   const { product, image, clickHandler, id } = props;
 
@@ -16,7 +14,7 @@ function ShopCard(props) {
           alt="Product Image"
         />
       </div>
-      <div className="px-6 py-4 z-10">
+      <div className="px-6 py-4 z-0">
         <div className="font-semibold text-xl mb-2">{product}</div>
         <p className="text-gray-700 text-base">Shop Now</p>
       </div>
