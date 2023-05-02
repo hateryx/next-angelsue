@@ -1,8 +1,8 @@
 import { Fragment, useState, useEffect } from "react";
+import Link from "next/link";
 
 function Product(props) {
-  const { product, image, summary, color } = props;
-  const [colorPicked, setColorPicked] = useState(color);
+  const { product, image, summary, routeName } = props;
 
   const [isCardVisible, setCardIsVisible] = useState();
   const clickHandler = () => {
@@ -28,6 +28,7 @@ function Product(props) {
         id="smalldevicehandler"
         className="absolute h-full inset-0 justify-center items-center z-3 shadow-xl bg-black bg-opacity-40 z-10 md:hidden"
         onClick={clickHandler}
+        style={{ animation: "fadeIn 2s ease-in-out" }}
       ></div>
       <div
         className={`${
@@ -38,6 +39,7 @@ function Product(props) {
       >
         <div
           className="absolute h-full inset-0 justify-center items-center z-3 shadow-xl bg-black bg-opacity-40"
+          style={{ animation: "fadeIn 2s ease-in-out" }}
           onClick={clickHandler}
         ></div>
         <div
@@ -70,11 +72,9 @@ function Product(props) {
                 </div>
                 <div className="border-b border-black py-2 flex justify-between">
                   <span>Product Lineup</span>
-                  <img src="assets/plusIcon.svg" className="h-6 w-6" />
-                </div>
-                <div className="border-b border-black py-2 flex justify-between">
-                  <span>Ingredients</span>
-                  <img src="assets/plusIcon.svg" className="h-6 w-6" />
+                  <Link href={`/lineup?id=${routeName}`}>
+                    <img src="assets/plusIcon.svg" className="h-6 w-6" />
+                  </Link>
                 </div>
                 <div className="border-b border-black py-2 flex justify-between">
                   <span>How to Use</span>
