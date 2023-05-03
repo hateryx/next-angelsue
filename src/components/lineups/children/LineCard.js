@@ -4,9 +4,9 @@ function LineCard(props) {
   return (
     <div className="border bg-grey-500 max-w-xs rounded shadow-lg mx-auto items-center container">
       <div className="flex flex-col items-center justify-center max-h-96 overflow-hidden">
-        <div>
+        <div className="h-96 justify-center">
           <img
-            className="justify-center object-cover z-0 max-h-min overflow-hidden transition-transform duration-500 transform-gpu scale-50 hover:scale-75"
+            className="justify-center h-full object-contain z-0 overflow-hidden transition-transform duration-500 transform-gpu scale-50 hover:scale-75"
             src={image}
             alt="Product Image"
           />
