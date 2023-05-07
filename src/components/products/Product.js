@@ -1,6 +1,5 @@
-import { Fragment, useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
-import { useRouter } from "next/router";
 
 function Product(props) {
   const { product, image, summary, routeName } = props;
@@ -9,12 +8,6 @@ function Product(props) {
   const clickHandler = () => {
     props.onClick();
     setCardIsVisible(false);
-  };
-
-  const router = useRouter();
-
-  const linkHandler = (routeName) => {
-    router.push(`/lineup?id=${routeName}`);
   };
 
   useEffect(() => {
