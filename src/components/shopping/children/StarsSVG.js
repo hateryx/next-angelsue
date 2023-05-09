@@ -7,6 +7,7 @@ function StarsSVG() {
       <Image src="assets/star.svg" width={15} height={15} />
       <Image src="assets/star.svg" width={15} height={15} />
       <Image src="assets/star.svg" width={15} height={15} />
+      <Image src="assets/star.svg" width={15} height={15} />
     </div>
   );
 }
