@@ -7,10 +7,9 @@ import { useRouter } from "next/router";
 import { useState } from "react";
 import Link from "next/link";
 
-function MainLineUp(props) {
+function MainLineUp() {
   const router = useRouter();
   const lineupId = router.query.id;
-  console.log(lineupId);
 
   const [constantsOfProductToShow, setConstantsOfProductToShow] = useState();
   const [title, setTitle] = useState();
@@ -46,9 +45,10 @@ function MainLineUp(props) {
         <div className="my-5 mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 gap-6 container content-around items-center">
           {constantsOfProductToShow
             ? constantsOfProductToShow.map(
-                ({ id, brand, productName, image }) => (
+                ({ id, brand, productName, image }, index) => (
                   <LineCard
-                    key={id}
+                    key={index}
+                    id={id}
                     brand={brand}
                     productName={productName}
                     image={image}

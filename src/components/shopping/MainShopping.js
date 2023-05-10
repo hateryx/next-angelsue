@@ -1,31 +1,65 @@
 import { useRouter } from "next/router";
+import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import StarsSVG from "./children/StarsSVG";
 
-function MainShopping(props) {
+import constantsParfum from "../lineups/children/constantsParfum";
+import constantsLotion from "../lineups/children/constantsLotion.js";
+import constantsCream from "../lineups/children/constantsCream";
+import constantsPimple from "../lineups/children/constantsPimple";
+
+function MainShopping() {
   const router = useRouter();
-  const lineupId = router.query.id;
+  const shopId = parseInt(router.query.id);
+
+  const [productToDisplay, setProductToDisplay] = useState();
+  const [genre, setGenre] = useState();
+
+  useEffect(() => {
+    if (shopId >= 10000 && shopId <= 20000) {
+      setGenre("Cream");
+      const creamProduct = constantsCream.find((item) => item.id === shopId);
+      setProductToDisplay(creamProduct);
+    } else if (shopId >= 20000 && shopId <= 30000) {
+      setGenre("Lotion");
+      const lotionProduct = constantsLotion.find((item) => item.id === shopId);
+      setProductToDisplay(lotionProduct);
+    } else if (shopId >= 30000 && shopId <= 40000) {
+      setGenre("Parfum");
+      const parfumProduct = constantsParfum.find((item) => item.id === shopId);
+      setProductToDisplay(parfumProduct);
+    } else {
+      setGenre("Pimple Cream");
+      const pimpleProduct = constantsPimple.find((item) => item.id === shopId);
+      setProductToDisplay(pimpleProduct);
+    }
+  }, [router.query.id]);
 
   return (
     <div className="w-full justify-center bg-white items-center">
       <div className="px-5 py-3 items-center text-sm tracking-tighter flex justify-between w-1/6">
         <Link href="/">Home</Link>
-        <div className="px-5 text-3xl whitespace-nowrap">Parfum</div>
+        <div className="px-5 text-3xl whitespace-nowrap">
+          {genre}
+          {shopId}
+        </div>
       </div>
+
       <div className="my-5 mx-auto items-center grid grid-cols-1 md:grid-cols-2 gap-4 container content-around">
         <div className="px-5 md:hidden">
           <div className="text-xs md:text-base font-semibold py-2 underline underline-offset-8">
-            Armani
+            {productToDisplay ? productToDisplay.brand : ""}
           </div>
           <div className="text-2xl md:text-3xl font-[1000] py-4 md:py-6 tracking-tight">
-            Acqua di Gioia Eau de Parfum
+            {productToDisplay ? productToDisplay.productName : ""}
           </div>
           <StarsSVG />
         </div>
         <div className="overflow-hidden md:h-[30rem] mx-10 md:mx-0 justify-center w-fit md:w-full">
           <img
             className="justify-center w-full h-full object-contain z-0 overflow-hidden transition-transform duration-500 transform-gpu scale-75 hover:scale-90"
-            src="assets/products/parfum/6.jpg"
+            src={productToDisplay ? productToDisplay.image : ""}
             alt="Product Image"
           />
         </div>
@@ -33,10 +67,10 @@ function MainShopping(props) {
         <div className="mx-auto px-5">
           <div className="hidden md:flex flex-col">
             <div className="font-semibold py-2 underline underline-offset-8">
-              Armani
+              {productToDisplay ? productToDisplay.brand : ""}
             </div>
             <div className="text-3xl font-[1000] py-6 tracking-tight">
-              Acqua di Gioia Eau de Parfum
+              {productToDisplay ? productToDisplay.productName : ""}
             </div>
             <StarsSVG />
           </div>

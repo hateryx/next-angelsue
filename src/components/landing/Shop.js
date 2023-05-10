@@ -10,17 +10,11 @@ function Shop() {
   const clickHandler = (event) => {
     setSelectProduct(products[event.currentTarget.id]);
     setShowProduct(!showProduct);
-    // !showProduct
-    //   ? (document.body.style.overflow = "hidden")
-    //   : (document.body.style.overflow = "scroll");
   };
 
   function productLandClick() {
     setTimeout(() => {
       setShowProduct(!showProduct);
-      // !showProduct
-      //   ? (document.body.style.overflow = "hidden")
-      //   : (document.body.style.overflow = "scroll");
     }, 200);
   }
 
@@ -38,7 +32,6 @@ function Shop() {
         {showProduct && (
           <Product
             clickHandler={clickHandler}
-            color={selectProduct.color}
             product={selectProduct.product}
             image={selectProduct.image}
             summary={selectProduct.summary}
