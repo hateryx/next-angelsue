@@ -15,34 +15,51 @@ function MainShopping() {
 
   const [productToDisplay, setProductToDisplay] = useState();
   const [genre, setGenre] = useState();
+  const [routeName, setRouteName] = useState();
 
   useEffect(() => {
     if (shopId >= 10000 && shopId <= 20000) {
       setGenre("Cream");
+      setRouteName("magic-cream");
       const creamProduct = constantsCream.find((item) => item.id === shopId);
       setProductToDisplay(creamProduct);
     } else if (shopId >= 20000 && shopId <= 30000) {
       setGenre("Lotion");
+      setRouteName("lotion");
       const lotionProduct = constantsLotion.find((item) => item.id === shopId);
       setProductToDisplay(lotionProduct);
     } else if (shopId >= 30000 && shopId <= 40000) {
       setGenre("Parfum");
+      setRouteName("parfum");
       const parfumProduct = constantsParfum.find((item) => item.id === shopId);
       setProductToDisplay(parfumProduct);
     } else {
       setGenre("Pimple Cream");
+      setRouteName("pimple-cream");
       const pimpleProduct = constantsPimple.find((item) => item.id === shopId);
       setProductToDisplay(pimpleProduct);
     }
   }, [router.query.id]);
+
+  const [toggleDetails, setToggleDetails] = useState(false);
+  const [toggleHowToUse, setToggleHowToUse] = useState(false);
+
+  const toggleHandler = (e) => {
+    if (e.target.id == "toggleDetails") {
+      setToggleDetails(!toggleDetails);
+    }
+    if (e.target.id == "toggleHowToUse") {
+      setToggleHowToUse(!toggleHowToUse);
+    }
+  };
 
   return (
     <div className="w-full justify-center bg-white items-center">
       <div className="px-5 py-3 items-center text-sm tracking-tighter flex justify-between w-1/6">
         <Link href="/">Home</Link>
         <div className="px-5 text-3xl whitespace-nowrap">
-          {genre}
-          {shopId}
+          {" "}
+          <Link href={`/lineup?id=${routeName}`}>{genre}</Link>
         </div>
       </div>
 
@@ -75,7 +92,9 @@ function MainShopping() {
             <StarsSVG />
           </div>
           <div>
-            <div className="text-xl font-[900] py-3 md:py-5">$98.00</div>
+            <div className="text-xl font-[900] py-3 md:py-5">
+              {productToDisplay ? productToDisplay.cost : ""}
+            </div>
             <div className="text-xs font-semibold tracking-tight">
               or 4 interest-free payments of $24.50
             </div>
@@ -84,27 +103,43 @@ function MainShopping() {
             </div>
           </div>
           <div className="max-w-md">
-            <div className="mt-20 mb-10 text-2xl font-semibold tracking-tighter">
+            <div className="mt-20 mb-10 text-2xl font-semibold tracking-tighter w-full">
               Summary
             </div>
             <div className="tracking-wider font-semibold md:font-medium text-sm md:text-lg leading-relaxed">
-              Armani Acqua di Gioia Eau de Parfum is a refreshing aquatic
-              women's perfume representing the joy of the Mediterranean Sea with
-              a blend of jasmine, lemon, and cedar.
+              {productToDisplay ? productToDisplay.summary : ""}
             </div>
             <div className="my-8 space-y-4 font-semibold text-sm">
-              <div className="border-b border-black py-2 flex justify-between">
+              <div className="py-2 flex justify-between">
                 <span>Details</span>
-                <img src="assets/plusIcon.svg" className="h-6 w-6" />
+                <img
+                  src="assets/plusIcon.svg"
+                  className="h-5 w-5"
+                  onClick={toggleHandler}
+                  id="toggleDetails"
+                />
               </div>
-              <div className="border-b border-black py-2 flex justify-between">
+              <div
+                className={`${toggleDetails ? "font-normal" : "hidden"} py-2`}
+              >
+                {productToDisplay ? productToDisplay.details : ""}
+              </div>
+              <div className="border-t border-black" />
+              <div className="py-2 flex justify-between">
                 <span>How to Use</span>
-                <img src="assets/plusIcon.svg" className="h-6 w-6" />
+                <img
+                  src="assets/plusIcon.svg"
+                  className="h-5 w-5"
+                  onClick={toggleHandler}
+                  id="toggleHowToUse"
+                />
               </div>
-              <div className="border-b border-black py-2 flex justify-between">
-                <span>Ingredients</span>
-                <img src="assets/plusIcon.svg" className="h-6 w-6" />
+              <div
+                className={`${toggleHowToUse ? "font-normal" : "hidden"} py-2`}
+              >
+                {productToDisplay ? productToDisplay.howToUse : ""}
               </div>
+              <div className="border-t border-black" />
             </div>
           </div>
         </div>

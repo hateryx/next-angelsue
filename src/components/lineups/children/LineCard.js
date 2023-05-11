@@ -22,7 +22,6 @@ function LineCard(props) {
       <div className="px-6 py-4 z-0">
         <div className="font-semibold text-md mb-2">{brand}</div>
         <p className="text-gray-700 text-sm">{productName}</p>
-        {id}
       </div>
     </div>
   );
