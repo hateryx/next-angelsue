@@ -1,4 +1,4 @@
-import { Fragment, useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 
 function NavBar() {
   const [isMenuOpen, setIsMenuOpen] = useState();
@@ -86,7 +86,10 @@ function NavBar() {
               </a>
             </li>
             <li>
-              <a className="tracking-widest text-2xl font-semibold text-fuchsia-500">
+              <a
+                href="#products"
+                className="tracking-widest text-2xl font-semibold text-fuchsia-500"
+              >
                 Products
               </a>
             </li>

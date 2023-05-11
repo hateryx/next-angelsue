@@ -19,7 +19,7 @@ function Shop() {
   }
 
   return (
-    <div className="relative z-8" id="shop">
+    <div className="relative z-8" id="products">
       <section className="py-7 sm:py-7 md:py-16 min-h-screen">
         <div className="flex flex-start justify-center">
           <p

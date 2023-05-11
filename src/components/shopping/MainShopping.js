@@ -19,7 +19,7 @@ function MainShopping() {
 
   useEffect(() => {
     if (shopId >= 10000 && shopId <= 20000) {
-      setGenre("Cream");
+      setGenre("Magic Cream");
       setRouteName("magic-cream");
       const creamProduct = constantsCream.find((item) => item.id === shopId);
       setProductToDisplay(creamProduct);
@@ -43,13 +43,23 @@ function MainShopping() {
 
   const [toggleDetails, setToggleDetails] = useState(false);
   const [toggleHowToUse, setToggleHowToUse] = useState(false);
+  const [detailHeight, setDetailHeight] = useState(0);
+  const [howToUseHeight, sethowToUseHeight] = useState(0);
 
   const toggleHandler = (e) => {
     if (e.target.id == "toggleDetails") {
       setToggleDetails(!toggleDetails);
+
+      const targetHeight = document.getElementById("detailsContent");
+      const specHeight = targetHeight.offsetHeight;
+      setDetailHeight(specHeight);
     }
     if (e.target.id == "toggleHowToUse") {
       setToggleHowToUse(!toggleHowToUse);
+
+      const targetHeight = document.getElementById("howToUseContent");
+      const specHeight = targetHeight.offsetHeight;
+      sethowToUseHeight(specHeight);
     }
   };
 
@@ -75,7 +85,7 @@ function MainShopping() {
         </div>
         <div className="overflow-hidden md:h-[30rem] mx-10 md:mx-0 justify-center w-fit md:w-full">
           <img
-            className="justify-center w-full h-full object-contain z-0 overflow-hidden transition-transform duration-500 transform-gpu scale-75 hover:scale-90"
+            className="justify-center w-full h-full object-contain z-10 overflow-hidden transition-transform duration-500 transform-gpu scale-75 hover:scale-90"
             src={productToDisplay ? productToDisplay.image : ""}
             alt="Product Image"
           />
@@ -110,36 +120,51 @@ function MainShopping() {
               {productToDisplay ? productToDisplay.summary : ""}
             </div>
             <div className="my-8 space-y-4 font-semibold text-sm">
-              <div className="py-2 flex justify-between">
+              <div className="py-2 flex justify-between overflow-hidden">
                 <span>Details</span>
                 <img
                   src="assets/plusIcon.svg"
-                  className="h-5 w-5"
+                  className="h-5 w-5 z-10"
                   onClick={toggleHandler}
                   id="toggleDetails"
                 />
               </div>
-              <div
-                className={`${toggleDetails ? "font-normal" : "hidden"} py-2`}
-              >
-                {productToDisplay ? productToDisplay.details : ""}
+              <div>
+                <div
+                  id="detailsContent"
+                  className={`${
+                    toggleDetails
+                      ? "translate-y-0"
+                      : `-translate-y-full opacity-0 -mb-[${detailHeight}px]`
+                  } font-normal transition-all duration-300 ease-in-out py-2 overflow-hidden`}
+                >
+                  {productToDisplay ? productToDisplay.details : ""}
+                </div>
+                <div className="border-t border-black" />
               </div>
-              <div className="border-t border-black" />
+
               <div className="py-2 flex justify-between">
                 <span>How to Use</span>
                 <img
                   src="assets/plusIcon.svg"
-                  className="h-5 w-5"
+                  className="h-5 w-5 z-10"
                   onClick={toggleHandler}
                   id="toggleHowToUse"
                 />
               </div>
-              <div
-                className={`${toggleHowToUse ? "font-normal" : "hidden"} py-2`}
-              >
-                {productToDisplay ? productToDisplay.howToUse : ""}
+              <div className="transition">
+                <div
+                  id="howToUseContent"
+                  className={`${
+                    toggleHowToUse
+                      ? "translate-y-0"
+                      : `-translate-y-full opacity-0 -mb-[${howToUseHeight}px]`
+                  } font-normal transition-all duration-300 ease-in-out py-2 overflow-hidden`}
+                >
+                  {productToDisplay ? productToDisplay.howToUse : ""}
+                </div>
+                <div className="border-t border-black" />
               </div>
-              <div className="border-t border-black" />
             </div>
           </div>
         </div>
