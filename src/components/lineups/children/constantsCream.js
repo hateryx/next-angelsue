@@ -47,7 +47,7 @@ const constantsCream = [
     details:
       "The 3 point treatment cream with Regenerist’s highly concentrated amino-peptide complex plumps sagging skin progressively helps regenerate skin surface cells and also helps areas prone to sagging - around the eye, jaw line and neck feel firm and lifted.",
     howToUse:
-      "Apply product entirely to freshly cleansed face, taking a few seconds to warm the product between your hands before applying. Cover three points liberally—around eye, jawline and neck with the product. Follow the contours of your bone structure as you apply the product and finish with your neck and décolletage. Use more product and spend more time massaging at night as your skin will be more receptive. Enjoy feeling the structure of your face as you move and lift your hands along the contours.",
+      "Apply product entirely to freshly cleansed face, taking a few seconds to warm the product between your hands before applying. Cover three points liberally—around eye, jawline and neck with the product. ",
   },
 ];
 

@@ -8,7 +8,7 @@ const constantsParfum = [
     summary:
       "Tan lines, ripe fruit, bare skin, SUN FRUIT Eau de Parfum by Ellis Brooklyn is a creamy and unapologetic blend of fresh fig, bergamot, handpicked jasmine, cyclamen, coconut and vanilla. Addictive and aspirational, it's the kind of scent that inspires vacation day dreams.",
     details:
-      "Sun Fruit Eau de Parfum is a refreshing and invigorating fragrance that captures the essence of a tropical paradise. It is a unisex fragrance that is perfect for anyone who loves the sun, sea, and sand. The fragrance opens with a burst of fresh citrus notes, including orange, lemon, and grapefruit, that give it a bright and energizing start. As it settles, the heart notes of juicy watermelon and tropical pineapple come forward, creating a mouthwatering and playful scent that is perfect for warm weather.",
+      "Sun Fruit Eau de Parfum is a refreshing and invigorating fragrance that captures the essence of a tropical paradise. It is a unisex fragrance that is perfect for anyone who loves the sun, sea, and sand. The fragrance opens with a burst of fresh citrus notes, including orange, lemon, and grapefruit.",
     howToUse: "Spray on pulse points or on the body as desired.",
   },
   {
@@ -85,7 +85,7 @@ const constantsParfum = [
     summary:
       "A distinctive ambery floral aroma, Gucci Guilty Pour Femme Eau de Parfum for Women is defined by the light, fresh femininity of lilac petals with a sparkling citrus Mandora twist on a trail of rich and sensual amber notes and Patchouli.",
     details:
-      "The iconic Italian house returns to its roots with a modern take on their original Pour Femme perfume, except this time, it’s a bit more intense and bold. Key notes like mandora—a Mediterranean fruit—are rounded out with touches of bergamot and pink pepper for a fun, floral spice. A deep base of patchouli oil allows this sexy scent to stay put all day (or night) without fading into a distant memory.",
+      "The iconic Italian house returns to its roots with a modern take on their original Pour Femme perfume, except this time, it’s a bit more intense and bold. Key notes like mandora—a Mediterranean fruit—are rounded out with touches of bergamot and pink pepper for a fun, floral spice.",
     howToUse: "Daily use. For every occasion.",
   },
   {

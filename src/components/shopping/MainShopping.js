@@ -46,19 +46,26 @@ function MainShopping() {
   const [detailHeight, setDetailHeight] = useState(0);
   const [howToUseHeight, sethowToUseHeight] = useState(0);
 
+  useEffect(() => {
+    const targetHeight = document.getElementById("detailsContent");
+    const specHeight = Math.ceil(targetHeight.offsetHeight / 50) * 50;
+    setDetailHeight(specHeight);
+  }, [toggleDetails]);
+
   const toggleHandler = (e) => {
     if (e.target.id == "toggleDetails") {
       setToggleDetails(!toggleDetails);
 
-      const targetHeight = document.getElementById("detailsContent");
-      const specHeight = targetHeight.offsetHeight;
-      setDetailHeight(specHeight);
+      // const targetHeight = document.getElementById("detailsContent");
+      // const specHeight = Math.ceil(targetHeight.offsetHeight / 10) * 10;
+      // setDetailHeight(specHeight);
+      // console.log(detailHeight);
     }
     if (e.target.id == "toggleHowToUse") {
       setToggleHowToUse(!toggleHowToUse);
 
       const targetHeight = document.getElementById("howToUseContent");
-      const specHeight = targetHeight.offsetHeight;
+      const specHeight = Math.ceil(targetHeight.offsetHeight / 10) * 10;
       sethowToUseHeight(specHeight);
     }
   };
@@ -135,12 +142,14 @@ function MainShopping() {
                   className={`${
                     toggleDetails
                       ? "translate-y-0"
-                      : `-translate-y-full opacity-0 -mb-[${detailHeight}px]`
-                  } font-normal transition-all duration-300 ease-in-out py-2 overflow-hidden`}
+                      : `-mb-[200px] opacity-0 -translate-y-full`
+                  } font-normal transition-all duration-300 ease-in-out py-3 text-center overflow-hidden min-h-[200px] max-h-[200px]`}
                 >
-                  {productToDisplay ? productToDisplay.details : ""}
+                  <div className="my-3">
+                    {productToDisplay ? productToDisplay.details : ""}
+                  </div>
                 </div>
-                <div className="border-t border-black" />
+                <div className="border-t border-black my-2" />
               </div>
 
               <div className="py-2 flex justify-between">
@@ -158,12 +167,14 @@ function MainShopping() {
                   className={`${
                     toggleHowToUse
                       ? "translate-y-0"
-                      : `-translate-y-full opacity-0 -mb-[${howToUseHeight}px]`
-                  } font-normal transition-all duration-300 ease-in-out py-2 overflow-hidden`}
+                      : `-mb-[100px] opacity-0 -translate-y-full`
+                  } font-normal flex items-center justify-center transition-all duration-300 ease-in-out py-3 overflow-hidden max-h-[100px] min-h-[100px]`}
                 >
-                  {productToDisplay ? productToDisplay.howToUse : ""}
+                  <div className="my-3">
+                    {productToDisplay ? productToDisplay.howToUse : ""}
+                  </div>
                 </div>
-                <div className="border-t border-black" />
+                <div className="border-t border-black my-2" />
               </div>
             </div>
           </div>

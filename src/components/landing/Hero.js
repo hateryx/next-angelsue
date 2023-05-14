@@ -13,11 +13,11 @@ function Hero() {
     };
   }, []);
 
-  const bgPosition = `50% ${scrollPosition * 0.5}px`;
+  const bgPosition = `50% ${scrollPosition * 0.18}px`;
 
   return (
     <div className="min-h-screen container mx-auto bg-white">
-      <section className="md:py-6 bg-fuchsia-50">
+      <section id="about" className="md:py-6 bg-fuchsia-50">
         <div className="max-w-full justify-between mx-auto px-6">
           <div className="flex flex-col-reverse md:flex-row items-center">
             <div className="md:w-full mb-8 md:mb-0 md:px-10">
@@ -31,18 +31,12 @@ function Hero() {
                 <span className="font-semibold tracking-wide text-2xl text-pink-600">
                   Angel Sue
                 </span>{" "}
-                skincare. Our products are designed to enhance your natural
-                radiance and boost your confidence. Hydrate, brighten, and
-                protect your skin with our skincare, and feel good in your own
-                skin. So go ahead, be your own kind of beautiful with{" "}
+                cosmetic products. Our products are designed to enhance your
+                natural radiance and boost your confidence. Hydrate, brighten,
+                and protect your skin with our skincare, and feel good in your
+                own skin. So go ahead, be your own kind of beautiful with{" "}
                 <span>Angel Sue</span>.
               </p>
-              <a
-                href="/register"
-                className="bg-blue-500 text-white px-6 py-3 rounded-lg shadow-lg hover:bg-blue-600 transition-colors duration-300"
-              >
-                Get Started
-              </a>
             </div>
             <div className="w-full h-screen mx-auto lg:w-2/3">
               <div

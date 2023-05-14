@@ -49,7 +49,7 @@ const constantsLotion = [
     details:
       "This luxurious The INKEY List Oat Cleansing Balm gently dissolves make-up, cleans, and nourishes the skin, making it ideal for sensitive skin types.  Combining soothing colloidal oatmeal with ceramides to support skin’s natural protective barrier, it's also formulated with oat kernel oil.",
     howToUse:
-      "The ideal gentle AM and PM cleanser. Gently massage a small amount onto dampened face and neck, add water, then rinse thoroughly.For an extra nourishment boost, leave on for 10 minutes before rinsing.",
+      "The ideal gentle AM and PM cleanser. Gently massage a small amount onto dampened face and neck, add water, then rinse thoroughly.",
   },
 ];
 

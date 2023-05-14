@@ -4,7 +4,7 @@ import constantsLotion from "./children/constantsLotion.js";
 import constantsCream from "./children/constantsCream";
 import constantsPimple from "./children/constantsPimple";
 import { useRouter } from "next/router";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 
 function MainLineUp() {
@@ -14,7 +14,7 @@ function MainLineUp() {
   const [constantsOfProductToShow, setConstantsOfProductToShow] = useState();
   const [title, setTitle] = useState();
 
-  if (!constantsOfProductToShow) {
+  useEffect(() => {
     switch (lineupId) {
       case "parfum":
         setConstantsOfProductToShow(constantsParfum);
@@ -33,14 +33,16 @@ function MainLineUp() {
         setTitle("Pimple Cream");
         break;
     }
-  }
+  }, [lineupId]);
 
   return (
     <div className="w-full bg-white justify-center">
       <div className="mx-auto min-h-screen bg-white">
         <div className="px-5 py-3 items-center text-sm tracking-tighter flex justify-between w-1/6">
           <Link href="/">Home</Link>
-          <div className="px-5 text-3xl whitespace-nowrap">{title}</div>
+          <div id={lineupId} className="px-5 text-3xl whitespace-nowrap">
+            {title}
+          </div>
         </div>
         <div className="my-5 mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 gap-6 container content-around items-center">
           {constantsOfProductToShow
