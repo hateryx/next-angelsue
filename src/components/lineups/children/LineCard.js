@@ -4,7 +4,6 @@ import { useRouter } from "next/router";
 function LineCard(props) {
   const { brand, productName, image, id } = props;
   const router = useRouter();
-  const routeDetails = router.query.id;
 
   return (
     <div className="border bg-grey-500 max-w-xs rounded shadow-lg mx-auto items-center container">
