@@ -34,8 +34,10 @@ function Hero() {
                 cosmetic products. Our products are designed to enhance your
                 natural radiance and boost your confidence. Hydrate, brighten,
                 and protect your skin with our skincare, and feel good in your
-                own skin. So go ahead, be your own kind of beautiful with{" "}
-                <span>Angel Sue</span>.
+                own skin.{" "}
+                <div className="py-6 font-semibold text-pink-600">
+                  So go ahead, be your own kind of beautiful.
+                </div>
               </p>
             </div>
             <div className="w-full h-screen mx-auto lg:w-2/3">
