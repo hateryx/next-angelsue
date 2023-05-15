@@ -167,8 +167,8 @@ function MainShopping() {
                   className={`${
                     toggleHowToUse
                       ? "translate-y-0"
-                      : `-mb-[100px] opacity-0 -translate-y-full`
-                  } font-normal flex items-center justify-center transition-all duration-300 ease-in-out py-3 overflow-hidden max-h-[100px] min-h-[100px]`}
+                      : `-mb-[200px] opacity-0 -translate-y-full`
+                  } font-normal flex items-center justify-center transition-all duration-300 ease-in-out py-3 overflow-hidden max-h-[200px] min-h-[200px]`}
                 >
                   <div className="my-3">
                     {productToDisplay ? productToDisplay.howToUse : ""}
