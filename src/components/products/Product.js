@@ -78,7 +78,9 @@ function Product(props) {
                 </div>
                 <div className="border-b border-black py-2 flex justify-between">
                   <span>How to Use</span>
-                  <img src="assets/plusIcon.svg" className="h-6 w-6" />
+                  <Link href={`/lineup?id=${routeName}`}>
+                    <img src="assets/plusIcon.svg" className="h-6 w-6" />
+                  </Link>
                 </div>
               </div>
             </div>

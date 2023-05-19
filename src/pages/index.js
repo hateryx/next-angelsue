@@ -1,6 +1,6 @@
 import { NavBar, Hero, Shop, Footer } from "@/components/landing";
 
-function HomePage(props) {
+function HomePage() {
   return (
     <div className="bg-white overflow-hidden">
       <NavBar />
