@@ -26,7 +26,7 @@ function Hero() {
                   Experience the difference
                 </span>
               </h1>
-              <p className="text-gray-600 font-light leading-relaxed text-lg md:text-xl lg:text-2xl mb-8">
+              <div className="text-gray-600 font-light leading-relaxed text-lg md:text-xl lg:text-2xl mb-8">
                 Embrace your unique beauty with{" "}
                 <span className="font-semibold tracking-wide text-2xl text-pink-600">
                   Angel Sue
@@ -38,7 +38,7 @@ function Hero() {
                 <div className="py-6 font-semibold text-pink-600">
                   So go ahead, be your own kind of beautiful.
                 </div>
-              </p>
+              </div>
             </div>
             <div className="w-full h-screen mx-auto lg:w-2/3">
               <div
