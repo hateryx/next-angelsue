@@ -55,11 +55,6 @@ function MainShopping() {
   const toggleHandler = (e) => {
     if (e.target.id == "toggleDetails") {
       setToggleDetails(!toggleDetails);
-
-      // const targetHeight = document.getElementById("detailsContent");
-      // const specHeight = Math.ceil(targetHeight.offsetHeight / 10) * 10;
-      // setDetailHeight(specHeight);
-      // console.log(detailHeight);
     }
     if (e.target.id == "toggleHowToUse") {
       setToggleHowToUse(!toggleHowToUse);
@@ -72,6 +67,7 @@ function MainShopping() {
 
   return (
     <div className="w-full justify-center bg-white items-center">
+      
       <div className="px-5 py-3 items-center text-sm tracking-tighter flex justify-between w-1/6">
         <Link href="/">Home</Link>
         <div className="px-5 text-3xl whitespace-nowrap">
