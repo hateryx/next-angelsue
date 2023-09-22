@@ -9,7 +9,7 @@ import constantsParfum from "../lineups/children/constantsParfum";
 import constantsLotion from "../lineups/children/constantsLotion.js";
 import constantsCream from "../lineups/children/constantsCream";
 import constantsPimple from "../lineups/children/constantsPimple";
-import { Box } from "@mui/material";
+import { Box, Button } from "@mui/material";
 
 function MainShopping() {
   const router = useRouter();
@@ -69,7 +69,7 @@ function MainShopping() {
 
   return (
     <div className="w-full justify-center bg-white items-center">
-      
+
       <div className="px-5 py-3 items-center text-sm tracking-tighter flex justify-between w-1/6">
         <Link href="/">Home</Link>
         <div className="px-5 text-3xl whitespace-nowrap">
@@ -87,7 +87,7 @@ function MainShopping() {
             {productToDisplay ? productToDisplay.productName : ""}
           </div>
           <Box>
-              <StarIcon /><StarIcon /><StarIcon /><StarIcon /><StarIcon />
+            <StarIcon /><StarIcon /><StarIcon /><StarIcon /><StarIcon />
           </Box>
         </div>
         <div className="overflow-hidden md:h-[30rem] mx-10 md:mx-0 justify-center w-fit md:w-full">
@@ -117,9 +117,24 @@ function MainShopping() {
             <div className="text-xs font-semibold tracking-tight">
               or 4 interest-free payments of $24.50
             </div>
-            <div className="mt-10 text-lg md:text-xl text-white font-extrabold bg-pink-600 text-center p-5 transition-transform duration-500 transform-gpu scale-90 hover:scale-100">
+            <Button sx={{
+              color: 'white',
+              mt: 10,
+              fontSize: '1.25rem', // equivalent to text-lg, you can adjust as needed
+              fontWeight: 'extrabold',
+              backgroundColor: '#DB2777', // use Material-UI color names or hex values
+              textAlign: 'center',
+              padding: '1.25rem', // equivalent to p-5, adjust as needed
+              transition: 'transform 500ms',
+              transform: 'scale(0.9)',
+              '&:hover': {
+                transform: 'scale(1)',
+                backgroundColor: '#C10D5E'
+              },
+              width: '100%'
+            }}>
               ADD TO BAG
-            </div>
+            </Button>
           </div>
           <div className="max-w-md">
             <div className="mt-20 mb-10 text-2xl font-semibold tracking-tighter w-full">
@@ -141,11 +156,10 @@ function MainShopping() {
               <div>
                 <div
                   id="detailsContent"
-                  className={`${
-                    toggleDetails
+                  className={`${toggleDetails
                       ? "translate-y-0"
                       : `-mb-[200px] opacity-0 -translate-y-full`
-                  } font-normal transition-all duration-300 ease-in-out py-3 text-center overflow-hidden min-h-[200px] max-h-[200px]`}
+                    } font-normal transition-all duration-300 ease-in-out py-3 text-center overflow-hidden min-h-[200px] max-h-[200px]`}
                 >
                   <div className="my-3">
                     {productToDisplay ? productToDisplay.details : ""}
@@ -166,11 +180,10 @@ function MainShopping() {
               <div className="transition">
                 <div
                   id="howToUseContent"
-                  className={`${
-                    toggleHowToUse
+                  className={`${toggleHowToUse
                       ? "translate-y-0"
                       : `-mb-[200px] opacity-0 -translate-y-full`
-                  } font-normal flex items-center justify-center transition-all duration-300 ease-in-out py-3 overflow-hidden max-h-[200px] min-h-[200px]`}
+                    } font-normal flex items-center justify-center transition-all duration-300 ease-in-out py-3 overflow-hidden max-h-[200px] min-h-[200px]`}
                 >
                   <div className="my-3">
                     {productToDisplay ? productToDisplay.howToUse : ""}
