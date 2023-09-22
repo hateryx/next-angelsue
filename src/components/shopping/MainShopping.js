@@ -3,11 +3,13 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import StarsSVG from "./children/StarsSVG";
+import StarIcon from '@mui/icons-material/Star';
 
 import constantsParfum from "../lineups/children/constantsParfum";
 import constantsLotion from "../lineups/children/constantsLotion.js";
 import constantsCream from "../lineups/children/constantsCream";
 import constantsPimple from "../lineups/children/constantsPimple";
+import { Box } from "@mui/material";
 
 function MainShopping() {
   const router = useRouter();
@@ -84,7 +86,9 @@ function MainShopping() {
           <div className="text-2xl md:text-3xl font-[1000] py-4 md:py-6 tracking-tight">
             {productToDisplay ? productToDisplay.productName : ""}
           </div>
-          <StarsSVG />
+          <Box>
+              <StarIcon /><StarIcon /><StarIcon /><StarIcon /><StarIcon />
+          </Box>
         </div>
         <div className="overflow-hidden md:h-[30rem] mx-10 md:mx-0 justify-center w-fit md:w-full">
           <img
@@ -102,7 +106,9 @@ function MainShopping() {
             <div className="text-3xl font-[1000] py-6 tracking-tight">
               {productToDisplay ? productToDisplay.productName : ""}
             </div>
-            <StarsSVG />
+            <Box>
+              <StarIcon /><StarIcon /><StarIcon /><StarIcon /><StarIcon />
+            </Box>
           </div>
           <div>
             <div className="text-xl font-[900] py-3 md:py-5">
