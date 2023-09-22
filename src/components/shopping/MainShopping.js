@@ -9,7 +9,7 @@ import constantsParfum from "../lineups/children/constantsParfum";
 import constantsLotion from "../lineups/children/constantsLotion.js";
 import constantsCream from "../lineups/children/constantsCream";
 import constantsPimple from "../lineups/children/constantsPimple";
-import { Box, Button } from "@mui/material";
+import { Accordion, AccordionSummary, AccordionDetails, Box, Button } from "@mui/material";
 
 function MainShopping() {
   const router = useRouter();
@@ -110,7 +110,7 @@ function MainShopping() {
               <StarIcon /><StarIcon /><StarIcon /><StarIcon /><StarIcon />
             </Box>
           </div>
-          <div>
+          <Box>
             <div className="text-xl font-[900] py-3 md:py-5">
               {productToDisplay ? productToDisplay.cost : ""}
             </div>
@@ -135,14 +135,16 @@ function MainShopping() {
             }}>
               ADD TO BAG
             </Button>
-          </div>
-          <div className="max-w-md">
-            <div className="mt-20 mb-10 text-2xl font-semibold tracking-tighter w-full">
-              Summary
-            </div>
-            <div className="tracking-wider font-semibold md:font-medium text-sm md:text-lg leading-relaxed">
-              {productToDisplay ? productToDisplay.summary : ""}
-            </div>
+          </Box>
+          <Box className="max-w-md">
+            <Box>
+              <div className="mt-20 mb-10 text-2xl font-semibold tracking-tighter w-full">
+                Summary
+              </div>
+              <div className="tracking-wider font-semibold md:font-medium text-sm md:text-lg leading-relaxed">
+                {productToDisplay ? productToDisplay.summary : ""}
+              </div>
+            </Box>
             <div className="my-8 space-y-4 font-semibold text-sm">
               <div className="py-2 flex justify-between overflow-hidden">
                 <span>Details</span>
@@ -157,8 +159,8 @@ function MainShopping() {
                 <div
                   id="detailsContent"
                   className={`${toggleDetails
-                      ? "translate-y-0"
-                      : `-mb-[200px] opacity-0 -translate-y-full`
+                    ? "translate-y-0"
+                    : `-mb-[200px] opacity-0 -translate-y-full`
                     } font-normal transition-all duration-300 ease-in-out py-3 text-center overflow-hidden min-h-[200px] max-h-[200px]`}
                 >
                   <div className="my-3">
@@ -181,8 +183,8 @@ function MainShopping() {
                 <div
                   id="howToUseContent"
                   className={`${toggleHowToUse
-                      ? "translate-y-0"
-                      : `-mb-[200px] opacity-0 -translate-y-full`
+                    ? "translate-y-0"
+                    : `-mb-[200px] opacity-0 -translate-y-full`
                     } font-normal flex items-center justify-center transition-all duration-300 ease-in-out py-3 overflow-hidden max-h-[200px] min-h-[200px]`}
                 >
                   <div className="my-3">
@@ -192,7 +194,7 @@ function MainShopping() {
                 <div className="border-t border-black my-2" />
               </div>
             </div>
-          </div>
+          </Box>
         </div>
       </div>
     </div>
