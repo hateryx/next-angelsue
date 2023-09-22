@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { Box, Paper } from "@mui/material";
+import LocalMallOutlinedIcon from '@mui/icons-material/LocalMallOutlined';
 
 function Product(props) {
   const { product, image, summary, routeName } = props;
@@ -23,7 +25,7 @@ function Product(props) {
   }, []);
 
   return (
-    <div className="container">
+    <Box container>
       <div
         id="smalldevicehandler"
         className="absolute h-full inset-0 justify-center items-center z-3 shadow-xl bg-black bg-opacity-40 z-10 md:hidden"
@@ -70,18 +72,18 @@ function Product(props) {
                 <div className="font-light leading-relaxed md:w-full">
                   {summary}
                 </div>
-                <div className="border-b border-black py-2 flex justify-between">
+                <Paper className="p-2 flex justify-between" elevation={2}>
                   <p>Product Lineup</p>
                   <Link href={`/lineup?id=${routeName}`}>
-                    <img src="assets/plusIcon.svg" className="h-6 w-6"></img>
+                    <LocalMallOutlinedIcon sx={{ color: 'darkred' }}/>
                   </Link>
-                </div>
+                </Paper>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </Box>
   );
 }
 
