@@ -3,7 +3,7 @@ const constantsLotion = [
     id: 20001,
     productName: "Magic Lotion",
     brand: "Angel Sue",
-    image: "assets/products/lotion/angel2.jpeg",
+    image: "/assets/products/lotion/angel2.jpeg",
     cost: "$98.00",
     summary:
       "Enriched with a blend of high-quality botanical extracts, vitamins, and antioxidants, our Angel Sue magic beauty lotion is designed to deeply moisturize and protect your skin. The luxurious texture glides on smoothly and absorbs quickly, providing long-lasting hydration without leaving a greasy or heavy residue.",
@@ -16,7 +16,7 @@ const constantsLotion = [
     id: 20002,
     productName: "Cleanse & Polish Hot Cloth Cleanser",
     brand: "Liz Earle",
-    image: "assets/products/lotion/2.jpeg",
+    image: "/assets/products/lotion/2.jpeg",
     cost: "$98.00",
     summary:
       "On a day-to-day basis, if I’m out in the office or meeting up with friends, I love to wear a full-face beat. So, when coming home after a long day of said outings, I don’t want to be spending another hour lugging off all that makeup with a million cotton pads. That’s why this Cleanse & Polish captured my heart – it’s suuuper convenient. Just apply two pumps onto your dry makeup-full face and it’ll melt away everything in a tick.",
@@ -29,7 +29,7 @@ const constantsLotion = [
     id: 20003,
     productName: "Calming Serum",
     brand: "Dr. Barbara Sturm",
-    image: "assets/products/lotion/3.jpg",
+    image: "/assets/products/lotion/3.jpg",
     cost: "$98.00",
     summary:
       "Enriched with an active, plant-based complex of Cardiospermum, Echium Plantagineum and Sunflower, Dr. Barbara Sturm’s CALMING SERUM soothes and rebalances irritated skin.",
@@ -42,7 +42,7 @@ const constantsLotion = [
     id: 20004,
     productName: "Oat Cleansing Balm",
     brand: "The INKEY List",
-    image: "assets/products/lotion/4.jpg",
+    image: "/assets/products/lotion/4.jpg",
     cost: "$98.00",
     summary:
       "A rich cleansing balm that melts away makeup and impurities without drying the skin.",

@@ -44,7 +44,7 @@ function Hero() {
             <div className="w-full h-screen mx-auto lg:w-2/3 relative">
               
                 <Image
-                  className="bg-cover bg-no-repeat h-screen overflow-hidden absolute h-full"
+                  className="bg-cover bg-no-repeat h-screen overflow-hidden absolute h-full w-full"
                   src="/assets/hero-m1.jpg"
                   style={{
                     // backgroundImage: `url("assets/hero-m1.jpg")`,

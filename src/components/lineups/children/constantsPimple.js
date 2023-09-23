@@ -3,7 +3,7 @@ const constantsPimple = [
     id: 40001,
     productName: "Clear Complexion Acne Serum + Spot Treatment",
     brand: "Urban Skin Rx",
-    image: "assets/products/pimple/1.jpg",
+    image: "/assets/products/pimple/1.jpg",
     cost: "$98.00",
     summary:
       "Urban Skin Rx Clear Complexion Acne Serum + Spot Treatment helps to reduce and prevent future breakouts, improve the appearance of blemishes and aging skin, and visibly smooth and soothe the skin's complexion.",
@@ -16,7 +16,7 @@ const constantsPimple = [
     id: 40002,
     productName: "Saturn Sulfur Spot Treatment Mask",
     brand: "Sunday Riley",
-    image: "assets/products/pimple/2.jpg",
+    image: "/assets/products/pimple/2.jpg",
     cost: "$20.00",
     summary:
       "A spot treatment containing sulfur, niacinamide, tea tree oil, and manuka oil to diminish the appearance of breakouts and cleanse skin for a smooth, visibly clear complexion.",
@@ -29,7 +29,7 @@ const constantsPimple = [
     id: 40003,
     productName: "Succinic Acid Acne Treatment",
     brand: "The Inkey List",
-    image: "assets/products/pimple/3.jpg",
+    image: "/assets/products/pimple/3.jpg",
     cost: "$9.00",
     summary:
       "A non-drying, gentle, and targeted acne treatment that clears acne spots fast while layering under makeup without flaking.",
@@ -42,7 +42,7 @@ const constantsPimple = [
     id: 40004,
     productName: "Anti Bump Solution",
     brand: "Renee Rouleau",
-    image: "assets/products/pimple/4.jpg",
+    image: "/assets/products/pimple/4.jpg",
     cost: "$49.50",
     summary:
       "Anti Bump Solution (formerly named Anti Cyst Treatment) is a potent topical cystic acne serum to visibly reduce the appearance of acne, blemishes and painful bumps that form deep within the skin.",
