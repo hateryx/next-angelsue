@@ -2,15 +2,17 @@ import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import StarsSVG from "./children/StarsSVG";
 import StarIcon from '@mui/icons-material/Star';
 
 import constantsParfum from "../lineups/children/constantsParfum";
 import constantsLotion from "../lineups/children/constantsLotion.js";
 import constantsCream from "../lineups/children/constantsCream";
 import constantsPimple from "../lineups/children/constantsPimple";
-import { Accordion, AccordionSummary, AccordionDetails, Box, Button } from "@mui/material";
+
+import { Accordion, AccordionSummary, AccordionDetails, Box, Button, Container } from "@mui/material";
 import { Add } from "@mui/icons-material";
+import { useTheme } from "@mui/material/styles";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 function MainShopping() {
   const router = useRouter();
@@ -19,6 +21,9 @@ function MainShopping() {
   const [productToDisplay, setProductToDisplay] = useState();
   const [genre, setGenre] = useState();
   const [routeName, setRouteName] = useState();
+
+  const theme = useTheme()
+  const matchesMDScreenAndBelow = useMediaQuery(theme.breakpoints.down('sm'))
 
   useEffect(() => {
     if (shopId >= 10000 && shopId <= 20000) {
@@ -66,7 +71,7 @@ function MainShopping() {
         </div>
       </div>
 
-      <div className="my-5 mx-auto items-center grid grid-cols-1 md:grid-cols-2 gap-4 container content-around">
+      <Box container className="my-5 mx-auto items-center grid grid-cols-1 md:grid-cols-2 gap-4">
         <div className="px-5 md:hidden">
           <div className="text-xs md:text-base font-semibold py-2 underline underline-offset-8">
             {productToDisplay ? productToDisplay.brand : ""}
@@ -78,16 +83,19 @@ function MainShopping() {
             <StarIcon /><StarIcon /><StarIcon /><StarIcon /><StarIcon />
           </Box>
         </div>
-        <div className="overflow-hidden md:h-[30rem] mx-10 md:mx-0 justify-center w-fit md:w-full">
-          <img
-            className="justify-center w-full h-full object-contain z-10 overflow-hidden transition-transform duration-500 transform-gpu scale-75 hover:scale-90"
+        {/* <Box sx= {{ position: 'relative' }} className="overflow-hidden md:h-[30rem] mx-10 md:mx-0 justify-center w-fit md:w-full"> */}
+        <Box sx= {{ position: 'relative' }} className="overflow-hidden h-[30rem] md:mx-0 justify-center w-fit w-full">
+          <Image
+            className="relative justify-center w-full h-full object-contain z-1 overflow-hidden transition-transform duration-500 transform-gpu scale-75 hover:scale-90"
             src={productToDisplay ? productToDisplay.image : ""}
             alt="Product Image"
+            fill={true}
           />
-        </div>
+        </Box>
 
         <div className="mx-auto px-5">
           <div className="hidden md:flex flex-col">
+            
             <div className="font-semibold py-2 underline underline-offset-8">
               {productToDisplay ? productToDisplay.brand : ""}
             </div>
@@ -194,7 +202,7 @@ function MainShopping() {
             </Box>
           </Box>
         </div>
-      </div>
+      </Box>
     </div>
   );
 }

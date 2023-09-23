@@ -3,7 +3,7 @@ const constantsCream = [
     id: 10001,
     productName: "Magic Cream",
     brand: "Angel Sue",
-    image: "assets/products/cream/2.jpg",
+    image: "/assets/products/cream/2.jpg",
     cost: "$98.00",
     summary:
       "Introducing the Angel Sue beauty magic cream, the ultimate solution for your skincare needs. This cream is a true wonder product that promises to transform your skin, leaving it looking and feeling youthful, radiant, and revitalized.",
@@ -15,7 +15,7 @@ const constantsCream = [
     id: 10002,
     productName: "Lanolips 101 Ointment 15g",
     brand: "Lanolips",
-    image: "assets/products/cream/3a.jpg",
+    image: "/assets/products/cream/3a.jpg",
     cost: "$20.00",
     summary:
       "A multi-award-winning, natural lip balm that locks hydration with the world's best lanolin.",
@@ -28,7 +28,7 @@ const constantsCream = [
     id: 10004,
     productName: "Coconut Water Cream",
     brand: "First Aid Beauty",
-    image: "assets/products/cream/4.jpg",
+    image: "/assets/products/cream/4.jpg",
     cost: "$34.00",
     summary:
       "Oil-free refreshingly light water cream moisturizer infused with skin nourishing Coconut Water hydrocharges your skin with a burst of electrolyte-rich moisture for softer, smoother, healthier-looking skin.Rich in electrolytes, amino acids, enzymes, antioxidants and phytonutrients, Coconut Water is known as nature's perfect hydrator.",
@@ -40,7 +40,7 @@ const constantsCream = [
     id: 10005,
     productName: "Regenerist 3 Point Face Cream",
     brand: "Olay",
-    image: "assets/products/cream/5.jpg",
+    image: "/assets/products/cream/5.jpg",
     cost: "$98.00",
     summary:
       "Regenerist 3 Point Treatment Cream is specifically designed to give dramatically younger looking skin for areas most prone to aging – eyes, jaw line, and neck.",

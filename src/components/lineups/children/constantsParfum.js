@@ -3,7 +3,7 @@ const constantsParfum = [
     id: 30001,
     productName: "Sun Fruit Eau de Parfum",
     brand: "Ellis Brooklyn",
-    image: "assets/products/parfum/sunfruit.png",
+    image: "/assets/products/parfum/sunfruit.png",
     cost: "$98.00",
     summary:
       "Tan lines, ripe fruit, bare skin, SUN FRUIT Eau de Parfum by Ellis Brooklyn is a creamy and unapologetic blend of fresh fig, bergamot, handpicked jasmine, cyclamen, coconut and vanilla. Addictive and aspirational, it's the kind of scent that inspires vacation day dreams.",
@@ -15,7 +15,7 @@ const constantsParfum = [
     id: 30002,
     productName: "Paradoxe Eau de Parfum",
     brand: "Prada",
-    image: "assets/products/parfum/2.png",
+    image: "/assets/products/parfum/2.png",
     cost: "$98.00",
     summary:
       "Prada Paradoxe Eau de Parfum, a floral women's fragrance, is an invitation to explore and express the paradoxical multi-dimensionality of women. The celebration of being never the same, always yourself.",
@@ -28,7 +28,7 @@ const constantsParfum = [
     id: 30003,
     productName: "Vanilla | 28",
     brand: "Kayali",
-    image: "assets/products/parfum/3.png",
+    image: "/assets/products/parfum/3.png",
     cost: "$125.00",
     summary:
       "Hate florals? Hate musk? Hate anything other than the sweet, cozy scent of vanilla? Hi, same. As someone whose signature body-lotion scent has been vanilla anything since middle school, I absolutely love this ~grown-up~ version from Kayali.",
@@ -41,7 +41,7 @@ const constantsParfum = [
     id: 30004,
     productName: "COCO MADEMOISELLE",
     brand: "Chanel",
-    image: "assets/products/parfum/coco.jpeg",
+    image: "/assets/products/parfum/coco.jpeg",
     cost: "$98.00",
     summary:
       "COCO MADEMOISELLE is a timeless fragrance that has become a classic in its own right. Its popularity has made it one of CHANEL's most iconic fragrances, beloved by women of all ages around the world.",
@@ -54,7 +54,7 @@ const constantsParfum = [
     id: 30005,
     productName: "'REPLICA' Under the Lemon Trees",
     brand: "Maison Margiela",
-    image: "assets/products/parfum/5.jpeg",
+    image: "/assets/products/parfum/5.jpeg",
     cost: "$160.00",
     summary:
       "This perfume is the closest you can get to a walk through Palermo, Italy, when the lemon trees are in bloom. But you know, way, way cheaper than the plane ticket. Inspired by a former memory of perfumer Violaine Collas, the bright, sparkling citrus scent has notes of coriander, tea leaves, and white musk.",
@@ -67,7 +67,7 @@ const constantsParfum = [
     id: 30006,
     productName: "Acqua di Gioia Eau de Parfum",
     brand: "Armani",
-    image: "assets/products/parfum/6.jpg",
+    image: "/assets/products/parfum/6.jpg",
     cost: "$98.00",
     summary:
       "Armani Acqua di Gioia Eau de Parfum is a refreshing aquatic women's perfume representing the joy of the Mediterranean Sea with a blend of jasmine, lemon, and cedar.",
@@ -80,7 +80,7 @@ const constantsParfum = [
     id: 30007,
     productName: "Guilty Pour Femme Eau de Parfum",
     brand: "Gucci",
-    image: "assets/products/parfum/7.jpg",
+    image: "/assets/products/parfum/7.jpg",
     cost: "$95.00",
     summary:
       "A distinctive ambery floral aroma, Gucci Guilty Pour Femme Eau de Parfum for Women is defined by the light, fresh femininity of lilac petals with a sparkling citrus Mandora twist on a trail of rich and sensual amber notes and Patchouli.",
@@ -92,7 +92,7 @@ const constantsParfum = [
     id: 30008,
     productName: "Shine",
     brand: "Dulce & Gabana",
-    image: "assets/products/parfum/8.jpg",
+    image: "/assets/products/parfum/8.jpg",
     cost: "$125.00",
     summary:
       "If you’re already itching for summer (um, hi, same), try spritzing on this fruity floral perfume from Dolce & Gabbana. The juicy blend of mango and jasmine will have you yearning for warm, sunny days at the beach or in the park.",
