@@ -10,6 +10,7 @@ import constantsLotion from "../lineups/children/constantsLotion.js";
 import constantsCream from "../lineups/children/constantsCream";
 import constantsPimple from "../lineups/children/constantsPimple";
 import { Accordion, AccordionSummary, AccordionDetails, Box, Button } from "@mui/material";
+import { Add } from "@mui/icons-material";
 
 function MainShopping() {
   const router = useRouter();
@@ -43,28 +44,15 @@ function MainShopping() {
     }
   }, [router.query.id]);
 
-  const [toggleDetails, setToggleDetails] = useState(false);
-  const [toggleHowToUse, setToggleHowToUse] = useState(false);
-  const [detailHeight, setDetailHeight] = useState(0);
-  const [howToUseHeight, sethowToUseHeight] = useState(0);
+  const [showDetails, setShowDetails] = useState(false);
+  const [showHowToUse, setShowHowToUse] = useState(false);
 
-  useEffect(() => {
-    const targetHeight = document.getElementById("detailsContent");
-    const specHeight = Math.ceil(targetHeight.offsetHeight / 50) * 50;
-    setDetailHeight(specHeight);
-  }, [toggleDetails]);
+  const toggleShowDetails = () => {
+    setShowDetails(!showDetails);
+  };
 
-  const toggleHandler = (e) => {
-    if (e.target.id == "toggleDetails") {
-      setToggleDetails(!toggleDetails);
-    }
-    if (e.target.id == "toggleHowToUse") {
-      setToggleHowToUse(!toggleHowToUse);
-
-      const targetHeight = document.getElementById("howToUseContent");
-      const specHeight = Math.ceil(targetHeight.offsetHeight / 10) * 10;
-      sethowToUseHeight(specHeight);
-    }
+  const toggleShowHowToUse = () => {
+    setShowHowToUse(!showHowToUse)
   };
 
   return (
@@ -118,18 +106,19 @@ function MainShopping() {
               or 4 interest-free payments of $24.50
             </div>
             <Button sx={{
-              color: 'white',
               mt: 10,
-              fontSize: '1.25rem', // equivalent to text-lg, you can adjust as needed
+              fontSize: '1.25rem', 
               fontWeight: 'extrabold',
-              backgroundColor: '#DB2777', // use Material-UI color names or hex values
+              color: '#db2777',
+              border: '2px solid',
               textAlign: 'center',
-              padding: '1.25rem', // equivalent to p-5, adjust as needed
-              transition: 'transform 500ms',
+              padding: '1.25rem', 
+              transition: 'all 500ms ease',
               transform: 'scale(0.9)',
               '&:hover': {
                 transform: 'scale(1)',
-                backgroundColor: '#C10D5E'
+                bgcolor: '#C10D5E',
+                color: 'white'
               },
               width: '100%'
             }}>
@@ -145,20 +134,29 @@ function MainShopping() {
                 {productToDisplay ? productToDisplay.summary : ""}
               </div>
             </Box>
-            <div className="my-8 space-y-4 font-semibold text-sm">
-              <div className="py-2 flex justify-between overflow-hidden">
-                <span>Details</span>
-                <img
-                  src="assets/plusIcon.svg"
-                  className="h-5 w-5 z-10"
-                  onClick={toggleHandler}
-                  id="toggleDetails"
-                />
-              </div>
-              <div>
+            <Box className="my-8 space-y-4 font-semibold text-sm">
+              <Accordion expanded={showDetails}>
+                <AccordionSummary id="product-details-panel" className="py-2 flex justify-between overflow-hidden" expandIcon={<Add id="test" />} onClick={toggleShowDetails}>
+                  Details
+                </AccordionSummary>
+                <AccordionDetails>
+                  {productToDisplay ? productToDisplay.details : "Hello"}
+                </AccordionDetails>
+              </Accordion>
+              <Accordion expanded={showHowToUse}>
+                <AccordionSummary id="product-how-to-use-panel" className="py-2 flex justify-between overflow-hidden" expandIcon={<Add />} onClick={toggleShowHowToUse}>
+                  How To Use
+                </AccordionSummary>
+                <AccordionDetails>
+                  {productToDisplay ? productToDisplay.howToUse : ""}
+                </AccordionDetails>
+              </Accordion>
+              <div className="border-t border-black my-2" />
+
+              {/* Previous Setup <div>
                 <div
                   id="detailsContent"
-                  className={`${toggleDetails
+                  className={`${tleDetails
                     ? "translate-y-0"
                     : `-mb-[200px] opacity-0 -translate-y-full`
                     } font-normal transition-all duration-300 ease-in-out py-3 text-center overflow-hidden min-h-[200px] max-h-[200px]`}
@@ -168,14 +166,14 @@ function MainShopping() {
                   </div>
                 </div>
                 <div className="border-t border-black my-2" />
-              </div>
+              </div> */}
 
-              <div className="py-2 flex justify-between">
+              {/* <div className="py-2 flex justify-between">
                 <span>How to Use</span>
                 <img
                   src="assets/plusIcon.svg"
                   className="h-5 w-5 z-10"
-                  onClick={toggleHandler}
+                  // onClick={toggleHandler}
                   id="toggleHowToUse"
                 />
               </div>
@@ -192,8 +190,8 @@ function MainShopping() {
                   </div>
                 </div>
                 <div className="border-t border-black my-2" />
-              </div>
-            </div>
+              </div> */}
+            </Box>
           </Box>
         </div>
       </div>
