@@ -1,7 +1,7 @@
 const products = [
   {
     product: "Magic Cream",
-    image: "assets/products/magiccream.jpg",
+    image: "/assets/products/magiccream.jpg",
     color: "#f6c9de",
     routeName: "magic-cream",
     summary:
@@ -9,7 +9,7 @@ const products = [
   },
   {
     product: "Parfum",
-    image: "assets/products/parfum.jpg",
+    image: "/assets/products/parfum.jpg",
     color: "#f5c781",
     routeName: "parfum",
     summary:
@@ -17,7 +17,7 @@ const products = [
   },
   {
     product: "Pimple Cream",
-    image: "assets/products/pimplecream.jpg",
+    image: "/assets/products/pimplecream.jpg",
     color: "#dedfd9",
     routeName: "pimple-cream",
     summary:
@@ -25,7 +25,7 @@ const products = [
   },
   {
     product: "Body Lotion",
-    image: "assets/products/bodylotion.jpg",
+    image: "/assets/products/bodylotion.jpg",
     color: "#d7cab9",
     routeName: "lotion",
     summary:

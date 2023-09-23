@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Image from "next/image";
 
 function Hero() {
   const [scrollPosition, setScrollPosition] = useState(-50);
@@ -40,18 +41,21 @@ function Hero() {
                 </div>
               </div>
             </div>
-            <div className="w-full h-screen mx-auto lg:w-2/3">
-              <div
-                className="bg-cover bg-no-repeat h-screen overflow-hidden"
-                style={{
-                  backgroundImage: `url("assets/hero-m1.jpg")`,
-                  backgroundPosition: bgPosition,
-                  maxHeight: "100vh",
-                  minHeight: "30vh",
-                  animation: "fadeIn 2s ease-in",
-                }}
-              >
-                <div className="h-full flex flex-col justify-between py-6 lg:py-16 mb-4 tracking-tight">
+            <div className="w-full h-screen mx-auto lg:w-2/3 relative">
+              
+                <Image
+                  className="bg-cover bg-no-repeat h-screen overflow-hidden absolute h-full"
+                  src="/assets/hero-m1.jpg"
+                  style={{
+                    // backgroundImage: `url("assets/hero-m1.jpg")`,
+                    backgroundPosition: bgPosition,
+                    maxHeight: "100vh",
+                    minHeight: "30vh",
+                    animation: "fadeIn 2s ease-in",
+                  }}
+                  fill={true}
+                />
+                <div className="h-full flex flex-col justify-between py-6 lg:py-16 mb-4 tracking-tight absolute w-full">
                   <h1
                     style={{ animation: "fadeIn 1s ease-out" }}
                     className="z-5 px-1 sm:px-3 py-5 text-5xl md:text-5xl font-semibold text-pink-800 leading-normal flex flex-col"
@@ -65,7 +69,7 @@ function Hero() {
                     BEAUTIFUL
                   </h1>
                 </div>
-              </div>
+              
             </div>
           </div>
         </div>
