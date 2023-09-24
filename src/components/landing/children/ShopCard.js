@@ -1,27 +1,27 @@
 import Image from "next/image";
+import { Box, Paper } from '@mui/material'
 
 function ShopCard(props) {
   const { product, image, clickHandler, id } = props;
 
   return (
-    <div
-      className="max-w-xs rounded relative overflow-clip shadow-lg mx-auto"
+    <Paper
+      className="max-w-sm rounded relative overflow-hidden shadow-lg mx-auto"
       onClick={clickHandler}
       id={id}
     >
       <div className="w-full overflow-hidden">
-        <Image
+        <img
           className="z-0 w-full h-full object-cover overflow-hidden transition-transform duration-300 transform-gpu scale-100 hover:scale-110"
           src={image}
           alt="Product Image"
-          fill={true}
         />
       </div>
-      <div className="px-6 py-4 z-0">
-        <div className="font-semibold text-xl mb-2">{product}</div>
+      <Box className="px-6 py-4 z-10 overflow-hidden">
+        <div className="font-semibold text-xl  mb-2">{product}</div>
         <p className="text-gray-700 text-base">Shop Now</p>
-      </div>
-    </div>
+      </Box>
+    </Paper>
   );
 }
 

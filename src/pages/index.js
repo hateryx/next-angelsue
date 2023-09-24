@@ -7,10 +7,10 @@ function HomePage() {
         <NavBar />
         <MainHero />
       </div>
-      <div className="relative">
-        <Hero />
-        <Shop />
-      </div>
+
+      <Hero />
+      <Shop />
+
       <Footer />
     </div>
   );
