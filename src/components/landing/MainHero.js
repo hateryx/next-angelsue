@@ -22,7 +22,17 @@ function MainHero() {
         // transform: 'scale(1.15)'
       }}>
       {/* <Box className="absolute flex place-self-center self-center w-full place-content-center items-center inset-0"> */}
-      <Paper className="absolute top-1/4 left-10 p-5 bg-opacity-50 bg-pink-800 mx-5 h-fit" elevation={1}>
+      <Paper
+        sx={{
+          position: 'absolute',
+          top: '25%',   // 1/4 top
+          left: '10',
+          padding: '20px', // p-5 equivalent padding
+          backgroundColor: 'rgba(233, 30, 99, 0.5)', // bg-opacity-50 bg-pink-800 equivalent background color
+          mx: '10px', // mx-5 equivalent horizontal margin
+          width: 'fit-content', // h-fit equivalent width
+        }} 
+        elevation={1}>
         <Typography variant={`${isLGscreenAndDown ? 'h4' : 'h3'}`} className="text-white tracking-tight px-3">Be your own kind of</Typography>
         <Typography variant={`${isLGscreenAndDown ? 'h4' : 'h3'}`} className="text-pink-300 tracking-wider px-3 py-3">BEAUTIFUL</Typography>
       </Paper>
