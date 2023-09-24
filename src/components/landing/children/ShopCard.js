@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 function ShopCard(props) {
   const { product, image, clickHandler, id } = props;
 
@@ -8,10 +10,11 @@ function ShopCard(props) {
       id={id}
     >
       <div className="w-full overflow-hidden">
-        <img
+        <Image
           className="z-0 w-full h-full object-cover overflow-hidden transition-transform duration-300 transform-gpu scale-100 hover:scale-110"
           src={image}
           alt="Product Image"
+          fill={true}
         />
       </div>
       <div className="px-6 py-4 z-0">
