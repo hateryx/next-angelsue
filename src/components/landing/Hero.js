@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import { Container } from '@mui/material'
 
 function Hero() {
   const [scrollPosition, setScrollPosition] = useState(-50);
@@ -17,7 +18,7 @@ function Hero() {
   const bgPosition = `50% ${scrollPosition * 0.18}px`;
 
   return (
-    <div className="min-h-screen container mx-auto bg-white">
+    <Container className="min-h-screen container mx-auto bg-white relative">
       <section id="about" className="md:py-6 bg-fuchsia-50">
         <div className="max-w-full justify-between mx-auto px-6">
           <div className="flex flex-col-reverse md:flex-row items-center">
@@ -74,7 +75,7 @@ function Hero() {
           </div>
         </div>
       </section>
-    </div>
+    </Container>
   );
 }
 

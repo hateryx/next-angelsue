@@ -44,7 +44,7 @@ function NavBar() {
   const { id } = router.query;
 
   return (
-    <div className="relative h-24 md:h-28 mb-2 bg-white">
+    <div className="relative h-24 md:h-28 mb-2 bg-white max-w-screen w-full">
       <div
         className={`${
           isFixed ? "fixed top-0 inset-x-0 bg-white shadow-md" : ""
