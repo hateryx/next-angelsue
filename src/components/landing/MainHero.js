@@ -25,12 +25,13 @@ function MainHero() {
       <Paper
         sx={{
           position: 'absolute',
-          top: '25%',   // 1/4 top
-          left: '10',
-          padding: '20px', // p-5 equivalent padding
-          backgroundColor: 'rgba(233, 30, 99, 0.5)', // bg-opacity-50 bg-pink-800 equivalent background color
-          mx: '10px', // mx-5 equivalent horizontal margin
-          width: 'fit-content', // h-fit equivalent width
+          top: '25%',   
+          left: '10%',
+          padding: '20px',
+          backgroundColor: 'rgba(233, 30, 99, 0.5)', 
+          mx: '10px',
+          width: 'fit-content', 
+          mx: 'auto'
         }} 
         elevation={1}>
         <Typography variant={`${isLGscreenAndDown ? 'h4' : 'h3'}`} className="text-white tracking-tight px-3">Be your own kind of</Typography>
