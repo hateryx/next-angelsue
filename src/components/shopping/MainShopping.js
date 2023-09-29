@@ -9,10 +9,9 @@ import constantsLotion from "../lineups/children/constantsLotion.js";
 import constantsCream from "../lineups/children/constantsCream";
 import constantsPimple from "../lineups/children/constantsPimple";
 
-import { Accordion, AccordionSummary, AccordionDetails, Box, Button, Container } from "@mui/material";
+import { Accordion, AccordionSummary, AccordionDetails, Box, Button, Container, Typography, useMediaQuery } from "@mui/material";
 import { Add } from "@mui/icons-material";
 import { useTheme } from "@mui/material/styles";
-import useMediaQuery from "@mui/material/useMediaQuery";
 
 function MainShopping() {
   const router = useRouter();
@@ -148,7 +147,7 @@ function MainShopping() {
                   Details
                 </AccordionSummary>
                 <AccordionDetails>
-                  {productToDisplay ? productToDisplay.details : "Hello"}
+                <Typography variant="body2">{productToDisplay ? productToDisplay.details : "Hello"}</Typography>
                 </AccordionDetails>
               </Accordion>
               <Accordion expanded={showHowToUse}>
@@ -156,10 +155,9 @@ function MainShopping() {
                   How To Use
                 </AccordionSummary>
                 <AccordionDetails>
-                  {productToDisplay ? productToDisplay.howToUse : ""}
+                  <Typography variant="body2">{productToDisplay ? productToDisplay.howToUse : ""}</Typography>
                 </AccordionDetails>
               </Accordion>
-              <div className="border-t border-black my-2" />
 
               {/* Previous Setup <div>
                 <div
