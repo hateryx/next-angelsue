@@ -19,9 +19,8 @@ function MainHero() {
         animation: "fadeIn 2s ease-in",
         width: '100%',
         height: '100%'
-        // transform: 'scale(1.15)'
+        
       }}>
-      {/* <Box className="absolute flex place-self-center self-center w-full place-content-center items-center inset-0"> */}
       <Paper
         sx={{
           position: 'absolute',
