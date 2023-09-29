@@ -2,15 +2,14 @@ import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import StarIcon from '@mui/icons-material/Star';
 
 import constantsParfum from "../lineups/children/constantsParfum";
 import constantsLotion from "../lineups/children/constantsLotion.js";
 import constantsCream from "../lineups/children/constantsCream";
 import constantsPimple from "../lineups/children/constantsPimple";
 
-import { Accordion, AccordionSummary, AccordionDetails, Box, Button, Container, Typography, useMediaQuery } from "@mui/material";
-import { Add } from "@mui/icons-material";
+import { Accordion, AccordionSummary, AccordionDetails, Box, Button, Container, Typography, useMediaQuery, ShoppingBagOutlined } from "@mui/material";
+import { Add, ShoppingBasket, Star } from "@mui/icons-material";
 import { useTheme } from "@mui/material/styles";
 
 function MainShopping() {
@@ -79,11 +78,11 @@ function MainShopping() {
             {productToDisplay ? productToDisplay.productName : ""}
           </div>
           <Box>
-            <StarIcon /><StarIcon /><StarIcon /><StarIcon /><StarIcon />
+            <Star /><Star /><Star /><Star /><Star />
           </Box>
         </div>
         {/* <Box sx= {{ position: 'relative' }} className="overflow-hidden md:h-[30rem] mx-10 md:mx-0 justify-center w-fit md:w-full"> */}
-        <Box sx= {{ position: 'relative' }} className="overflow-hidden h-[30rem] md:mx-0 justify-center w-fit w-full">
+        <Box sx={{ position: 'relative' }} className="overflow-hidden h-[30rem] md:mx-0 justify-center w-fit w-full">
           <Image
             className="relative justify-center w-full h-full object-contain z-1 overflow-hidden transition-transform duration-500 transform-gpu scale-75 hover:scale-90"
             src={productToDisplay ? productToDisplay.image : ""}
@@ -94,7 +93,7 @@ function MainShopping() {
 
         <div className="mx-auto px-5">
           <div className="hidden md:flex flex-col">
-            
+
             <div className="font-semibold py-2 underline underline-offset-8">
               {productToDisplay ? productToDisplay.brand : ""}
             </div>
@@ -102,7 +101,7 @@ function MainShopping() {
               {productToDisplay ? productToDisplay.productName : ""}
             </div>
             <Box>
-              <StarIcon /><StarIcon /><StarIcon /><StarIcon /><StarIcon />
+              <Star /><Star /><Star /><Star /><Star />
             </Box>
           </div>
           <Box>
@@ -114,12 +113,12 @@ function MainShopping() {
             </div>
             <Button sx={{
               mt: 10,
-              fontSize: '1.25rem', 
+              fontSize: '1.25rem',
               fontWeight: 'extrabold',
               color: '#db2777',
               border: '2px solid',
               textAlign: 'center',
-              padding: '1.25rem', 
+              padding: '1.25rem',
               transition: 'all 500ms ease',
               transform: 'scale(0.9)',
               '&:hover': {
@@ -147,7 +146,7 @@ function MainShopping() {
                   Details
                 </AccordionSummary>
                 <AccordionDetails>
-                <Typography variant="body2">{productToDisplay ? productToDisplay.details : "Hello"}</Typography>
+                  <Typography variant="body2">{productToDisplay ? productToDisplay.details : "Hello"}</Typography>
                 </AccordionDetails>
               </Accordion>
               <Accordion expanded={showHowToUse}>
@@ -158,49 +157,20 @@ function MainShopping() {
                   <Typography variant="body2">{productToDisplay ? productToDisplay.howToUse : ""}</Typography>
                 </AccordionDetails>
               </Accordion>
-
-              {/* Previous Setup <div>
-                <div
-                  id="detailsContent"
-                  className={`${tleDetails
-                    ? "translate-y-0"
-                    : `-mb-[200px] opacity-0 -translate-y-full`
-                    } font-normal transition-all duration-300 ease-in-out py-3 text-center overflow-hidden min-h-[200px] max-h-[200px]`}
-                >
-                  <div className="my-3">
-                    {productToDisplay ? productToDisplay.details : ""}
-                  </div>
-                </div>
-                <div className="border-t border-black my-2" />
-              </div> */}
-
-              {/* <div className="py-2 flex justify-between">
-                <span>How to Use</span>
-                <img
-                  src="assets/plusIcon.svg"
-                  className="h-5 w-5 z-10"
-                  // onClick={toggleHandler}
-                  id="toggleHowToUse"
-                />
-              </div>
-              <div className="transition">
-                <div
-                  id="howToUseContent"
-                  className={`${toggleHowToUse
-                    ? "translate-y-0"
-                    : `-mb-[200px] opacity-0 -translate-y-full`
-                    } font-normal flex items-center justify-center transition-all duration-300 ease-in-out py-3 overflow-hidden max-h-[200px] min-h-[200px]`}
-                >
-                  <div className="my-3">
-                    {productToDisplay ? productToDisplay.howToUse : ""}
-                  </div>
-                </div>
-                <div className="border-t border-black my-2" />
-              </div> */}
             </Box>
           </Box>
         </div>
+        <ShoppingBasket sx={{
+          position: 'fixed', cursor: 'pointer', right: 10, bottom: 10, border: '10px solid', borderColor:'#db2777' , borderRadius: '50%', m: 3, fontSize: '3rem', bgcolor: '#db2777', zIndex: 5,
+          color: 'white', '&:hover': {
+            transform: 'scale(1)',
+            bgcolor: '#C10D5E',
+            borderColor:'#C10D5E',
+            color: 'white'
+          },
+        }} />
       </Box>
+
     </div>
   );
 }
