@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import { Container } from '@mui/material'
+import { Box, useMediaQuery, Paper, Typography } from '@mui/material'
+import { useTheme } from '@mui/material/styles'
 
 function Hero() {
   const [scrollPosition, setScrollPosition] = useState(-50);
@@ -14,11 +15,13 @@ function Hero() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+  const theme = useTheme()
 
   const bgPosition = `50% ${scrollPosition * 0.18}px`;
+  const isTabletView = useMediaQuery(theme.breakpoints.between('600','920')) 
 
   return (
-    <Container className="min-h-screen container mx-auto bg-white relative">
+    <Box className="min-h-screen bg-white relative min-w-screen">
       <section id="about" className="md:py-6 bg-fuchsia-50">
         <div className="max-w-full justify-between mx-auto px-6">
           <div className="flex flex-col-reverse md:flex-row items-center">
@@ -42,19 +45,31 @@ function Hero() {
                 </div>
               </div>
             </div>
-            <div className="w-full h-screen mx-auto lg:w-2/3 relative">
+            <div className="w-full h-screen lg:w-2/3 relative">
               
-                <Image
-                  className="bg-cover bg-no-repeat h-screen overflow-hidden absolute h-full w-full"
+                {/* <Image
+                  className="bg-cover bg-no-repeat bg-fixed h-screen overflow-hidden absolute h-full w-full"
                   src="/assets/hero-m1.jpg"
                   style={{
                     // backgroundImage: `url("assets/hero-m1.jpg")`,
-                    backgroundPosition: bgPosition,
                     maxHeight: "100vh",
                     minHeight: "30vh",
                     animation: "fadeIn 2s ease-in",
+                    width: '100%'
                   }}
                   fill={true}
+                /> */}
+                <Box
+                  className={`bg-cover bg-no-repeat ${isTabletView ? 'bg-center' : ''} h-screen overflow-hidden absolute h-full w-full`}
+                  src="/assets/hero-m1.jpg"
+                  style={{
+                    backgroundImage: `url("assets/hero-m1.jpg")`,
+                    maxHeight: "100vh",
+                    minHeight: "30vh",
+                    animation: "fadeIn 2s ease-in",
+                    width: '100%'
+                  }}
+         
                 />
                 <div className="h-full flex flex-col justify-between py-6 lg:py-16 mb-4 tracking-tight absolute w-full">
                   <h1
@@ -75,7 +90,7 @@ function Hero() {
           </div>
         </div>
       </section>
-    </Container>
+    </Box>
   );
 }
 
