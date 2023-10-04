@@ -81,7 +81,6 @@ function MainShopping() {
               <Star /><Star /><Star /><Star /><Star />
             </Box>
           </div>
-          {/* <Box sx= {{ position: 'relative' }} className="overflow-hidden md:h-[30rem] mx-10 md:mx-0 justify-center w-fit md:w-full"> */}
 
           <Box sx={{ position: 'relative' }} className="overflow-hidden h-[30rem] md:mx-0 justify-center w-fit w-full">
             <Image
